@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="repository.ICategoryRepositoryXML">
+    <select id="selectById" resultMap="selectmap" parameterType="int">
+        select * from t_category as c, t_good as g
+        where g.cid = c.cid and c.cid = #{cid}
+    </select>
+    <resultMap id="selectmap" type="entity.Category">
+        <id property="cid" column="cid"/>
+        <result property="cname" column="cname"/>
+        <!--一对多时，多的字段用<collection>，如果数据库中两个表的字段名相同，需要在select中给字段起别名，
+        在映射的column中写别名-->
+        <!--一对一时(对一个对象)，对应的对象用<association property="" javaType=""></associate>-->
+        <collection property="goodsList" ofType="entity.Goods">
+            <id property="gid" column="gid"/>
+            <result property="gnum" column="gnum"/>
+            <result property="gname" column="gname"/>
+            <result property="gprice" column="gprice"/>
+            <result property="gstock" column="gstock"/>
+            <result property="gdesc" column="gdesc"/>
+        </collection>
+    </resultMap>
+</mapper>

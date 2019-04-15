@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+   根：mapper
+      属性：namespace：映射的dao的全限定名：com.neuedu.dao.IUserDAO
+-->
+<mapper namespace = "repository.IUserRepositoryXML">
+
+    <!--类属性与数据库字段不匹配时手动匹配，调用时用resultmap的id-->
+    <!--property为类属性，column为数据库字段-->
+    <!--<resultMap id="" type="">-->
+        <!--<id property="" column=""/>-->
+        <!--<result property="" column=""/>-->
+    <!--</resultMap>-->
+    <!--
+        属性：id：设置时dao中方法名
+        resultType:设置返回的类型：元素类型
+    -->
+    <select id="getAll" resultType="entity.User"><!--resultmap=""-->
+          select * from t_user
+    </select>
+
+    <select id="getById" parameterType="int" resultType="entity.User">
+        select * from t_user where uid = #{id}
+    </select>
+    
+    <insert id="insert">
+        insert into t_user (uname, upwd, telephone, address, ulevel)
+        values (#{user.uname}, #{user.upwd}, #{user.telephone}, #{user.address}, #{user.ulevel})
+    </insert>
+
+    <update id="updateById">
+        update t_user set uname = #{user.uname}, upwd = #{user.upwd}, telephone = #{user.telephone}, address = #{user.address}, ulevel = #{user.ulevel}
+        where uid = #{id}
+    </update>
+
+    <delete id="deleteById">
+        delete from t_user where uid = #{id}
+    </delete>
+</mapper>

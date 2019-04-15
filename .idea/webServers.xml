@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="2d5fbe47-7319-4566-a012-b81d5f33e962" name="TenCloudTomcat" url="http://152.136.70.35/">
+        <fileTransfer host="152.136.70.35" port="22" privateKey="$USER_HOME$/Documents/学校文件/TencentCloudSSH" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="e798977a-cd2d-4648-80dc-770b5d783395" name="152.136.70.35" url="http://152.136.70.35">
+        <fileTransfer host="152.136.70.35" port="22" privateKey="$USER_HOME$/Documents/学校文件/TencentCloudSSH" rootFolder="//home/apache-tomcat-8.5.39" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
