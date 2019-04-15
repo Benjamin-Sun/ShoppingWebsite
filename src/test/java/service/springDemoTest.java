@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.demo.DataType;
-import service.demo.springDemo;
+import service.demo.SpringDemo;
 
 import java.util.List;
 import java.util.Map;
@@ -14,9 +14,8 @@ public class springDemoTest {
 
     @Test
     public void say() {
-
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        springDemo springDemo = (springDemo) context.getBean("springDemo");
+        SpringDemo springDemo = (SpringDemo) context.getBean("springDemo");
 
         springDemo.say();
     }

@@ -1,6 +1,9 @@
 package service.demo;
 
-public class springDemo {
+import org.springframework.stereotype.Component;
+
+@Component
+public class SpringDemo2 {
     private int no;
     private String name;
 
@@ -20,12 +23,7 @@ public class springDemo {
         this.name = name;
     }
 
-    public springDemo(int no, String name) {
-        this.no = no;
-        this.name = name;
-    }
-
-    public void say(){
-        System.out.println("hellp spring");
+    public void hello(){
+        System.out.println("hello");
     }
 }
