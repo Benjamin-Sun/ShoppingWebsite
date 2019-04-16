@@ -1,6 +1,6 @@
-package repository;
+package ssm.repository;
 
-import entity.Category;
+import ssm.entity.Category;
 import org.apache.ibatis.annotations.Param;
 
 public interface ICategoryRepositoryXML {

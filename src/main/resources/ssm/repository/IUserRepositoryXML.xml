@@ -6,7 +6,7 @@
    根：mapper
       属性：namespace：映射的dao的全限定名：com.neuedu.dao.IUserDAO
 -->
-<mapper namespace = "repository.IUserRepositoryXML">
+<mapper namespace = "ssm.repository.IUserRepositoryXML">
 
     <!--类属性与数据库字段不匹配时手动匹配，调用时用resultmap的id-->
     <!--property为类属性，column为数据库字段-->
@@ -18,11 +18,11 @@
         属性：id：设置时dao中方法名
         resultType:设置返回的类型：元素类型
     -->
-    <select id="getAll" resultType="entity.User"><!--resultmap=""-->
+    <select id="getAll" resultType="ssm.entity.User"><!--resultmap=""-->
           select * from t_user
     </select>
 
-    <select id="getById" parameterType="int" resultType="entity.User">
+    <select id="getById" parameterType="int" resultType="ssm.entity.User">
         select * from t_user where uid = #{id}
     </select>
     

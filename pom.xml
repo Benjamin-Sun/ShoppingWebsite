@@ -24,7 +24,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
-      <scope>test</scope>
+      <scope>ssm.test</scope>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -51,7 +51,7 @@
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>1.2.3</version>
-      <scope>test</scope>
+      <scope>ssm.test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-core -->
     <dependency>
@@ -73,7 +73,18 @@
       <artifactId>spring-context</artifactId>
       <version>4.3.22.RELEASE</version>
     </dependency>
-
+    <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>1.3.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>4.3.22.RELEASE</version>
+    </dependency>
 
   </dependencies>
 

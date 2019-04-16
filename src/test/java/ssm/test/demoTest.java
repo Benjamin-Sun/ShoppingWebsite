@@ -1,9 +1,11 @@
-package test;
+package ssm.test;
 
-import entity.User;
-import repository.Conn;
-import repository.IUserRepository;
-import repository.IUserRepositoryXML;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import ssm.entity.User;
+import ssm.repository.Conn;
+import ssm.repository.IUserRepository;
+import ssm.repository.IUserRepositoryXML;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
@@ -127,5 +129,18 @@ public class demoTest {
         sqlSession.close();
 
         System.out.println(user);
+    }
+
+    @Autowired
+    IUserRepository iUserRepository;
+
+    @Test
+    public void noxmlselect(){
+        try {
+            iUserRepository.selectAll();
+            System.out.println(iUserRepository.selectAll());
+        } catch (Exception e){
+            System.out.println("null");
+        }
     }
 }

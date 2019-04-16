@@ -1,13 +1,11 @@
-package service;
+package ssm.service;
 
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
-import repository.Conn;
-import repository.ICategoryRepositoryXML;
+import ssm.repository.Conn;
+import ssm.repository.ICategoryRepositoryXML;
 
 import java.io.IOException;
-
-import static org.junit.Assert.*;
 
 public class GategoryServiceTest {
 

@@ -1,9 +1,9 @@
-package service;
+package ssm.service;
 
-import entity.User;
+import ssm.entity.User;
 import org.apache.ibatis.session.SqlSession;
-import repository.Conn;
-import repository.IUserRepository;
+import ssm.repository.Conn;
+import ssm.repository.IUserRepository;
 
 import java.io.IOException;
 import java.util.List;

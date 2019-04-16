@@ -1,4 +1,4 @@
-package entity;
+package ssm.entity;
 
 public class User {
     private Integer uid;

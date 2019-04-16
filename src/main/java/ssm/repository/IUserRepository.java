@@ -1,10 +1,12 @@
-package repository;
+package ssm.repository;
 
-import entity.User;
+import org.springframework.stereotype.Component;
+import ssm.entity.User;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
+@Component
 public interface IUserRepository {
     @Select("SELECT * FROM t_user")
 //    当数据库字段名与实体类属性名不配对时进行配对，通过在sql语句中给字段起别名的方式

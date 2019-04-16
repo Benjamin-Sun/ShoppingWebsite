@@ -1,9 +1,9 @@
-package service;
+package ssm.service;
 
-import entity.Goods;
+import ssm.entity.Goods;
 import org.apache.ibatis.session.SqlSession;
-import repository.Conn;
-import repository.IGoodsRepositoryXML;
+import ssm.repository.Conn;
+import ssm.repository.IGoodsRepositoryXML;
 
 import java.io.IOException;
 import java.math.BigDecimal;

@@ -2,32 +2,32 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="repository.IGoodsRepositoryXML">
+<mapper namespace="ssm.repository.IGoodsRepositoryXML">
     <sql id="all">
         gname, gnum, gprice, gstock, gsell, gdesc
     </sql>
     <!--高级查询 <where> 可自动省略掉没用的and和or-->
-    <select id="getByNameOrDesc" resultType="entity.Goods">
+    <select id="getByNameOrDesc" resultType="ssm.entity.Goods">
         select <include refid="all"/>
         from t_good
         <where>
-            <if test="gname != null">
+            <if ssm.test="gname != null">
                 and gname like "%${gname}%"
             </if>
-            <if test="gdesc != null">
+            <if ssm.test="gdesc != null">
                 and gdesc like concat("%", #{gdesc}, "%")
             </if>
         </where>
     </select>
 
-    <select id="getByNameOrDescT" resultType="entity.Goods">
+    <select id="getByNameOrDescT" resultType="ssm.entity.Goods">
         select <include refid="all"/>
         from t_good
         <trim prefix="where" prefixOverrides="and|or">
-            <if test="gname != null">
+            <if ssm.test="gname != null">
                 and gname like "%${gname}%"
             </if>
-            <if test="gdesc != null">
+            <if ssm.test="gdesc != null">
                 and gdesc like concat("%", #{gdesc}, "%")
             </if>
         </trim>
@@ -36,13 +36,13 @@
     <!--<update id="update">
         UPDATE  t_good
        <set>
-            <if  test="goods.gname!=null">
+            <if  ssm.test="goods.gname!=null">
                 gname=#{goods.gname},
             </if>
-            <if test="goods.gdesc!=null">
+            <if ssm.test="goods.gdesc!=null">
                 gdesc=#{goods.gdesc},
             </if>
-            <if test="goods.gprice!=null">
+            <if ssm.test="goods.gprice!=null">
                 gprice=#{goods.gprice},
             </if>
        </set>
@@ -52,13 +52,13 @@
     <update id="update">
         update t_good
         <trim prefix="set" suffixOverrides=",">
-            <if  test="goods.gname!=null">
+            <if  ssm.test="goods.gname!=null">
                 gname=#{goods.gname},
             </if>
-            <if test="goods.gdesc!=null">
+            <if ssm.test="goods.gdesc!=null">
                 gdesc=#{goods.gdesc},
             </if>
-            <if test="goods.gprice!=null">
+            <if ssm.test="goods.gprice!=null">
                 gprice=#{goods.gprice},
             </if>
         </trim>

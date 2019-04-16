@@ -1,4 +1,4 @@
-package repository;
+package ssm.repository;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;

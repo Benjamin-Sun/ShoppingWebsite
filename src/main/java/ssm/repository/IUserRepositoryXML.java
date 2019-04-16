@@ -1,6 +1,6 @@
-package repository;
+package ssm.repository;
 
-import entity.User;
+import ssm.entity.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

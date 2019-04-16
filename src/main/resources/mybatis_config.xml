@@ -15,11 +15,11 @@
         </environment>
     </environments>
     <mappers>
-        <mapper class="repository.IUserRepository"/>
-        <mapper class="repository.IUserRepositoryXML"/>
+        <mapper class="ssm.repository.IUserRepository"/>
+        <mapper class="ssm.repository.IUserRepositoryXML"/>
         <!--非接口使用方式，直接通过xml-->
-        <mapper resource="repository/IUserRepositoryXML.xml"/>
-        <mapper class="repository.IGoodsRepositoryXML"/>
-        <mapper class="repository.ICategoryRepositoryXML"/>
+        <mapper resource="ssm.repository/IUserRepositoryXML.xml"/>
+        <mapper class="ssm.repository.IGoodsRepositoryXML"/>
+        <mapper class="ssm.repository.ICategoryRepositoryXML"/>
     </mappers>
 </configuration>

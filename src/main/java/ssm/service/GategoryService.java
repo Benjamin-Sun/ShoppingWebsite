@@ -1,9 +1,9 @@
-package service;
+package ssm.service;
 
-import entity.Category;
+import ssm.entity.Category;
 import org.apache.ibatis.session.SqlSession;
-import repository.Conn;
-import repository.ICategoryRepositoryXML;
+import ssm.repository.Conn;
+import ssm.repository.ICategoryRepositoryXML;
 
 import java.io.IOException;
 

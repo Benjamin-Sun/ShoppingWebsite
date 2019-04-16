@@ -1,4 +1,4 @@
-package entity;
+package ssm.entity;
 
 import java.util.List;
 

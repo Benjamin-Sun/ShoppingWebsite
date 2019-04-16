@@ -1,9 +1,9 @@
-package test;
+package ssm.test;
 
-import entity.User;
-import repository.Conn;
-import repository.IUserRepository;
-import repository.IUserRepositoryXML;
+import ssm.entity.User;
+import ssm.repository.Conn;
+import ssm.repository.IUserRepository;
+import ssm.repository.IUserRepositoryXML;
 import org.apache.ibatis.session.SqlSession;
 
 import java.io.IOException;
@@ -18,7 +18,6 @@ public class demo {
     private SqlSession sqlSession = new Conn().getSqlSession();
     private IUserRepository userRepository = sqlSession.getMapper(IUserRepository.class);
     private IUserRepositoryXML userRepositoryXML = sqlSession.getMapper(IUserRepositoryXML.class);
-
 
     public static void main(String[] args) throws IOException {
 //        System.out.println(new demo().xmlGetAll());
@@ -119,4 +118,5 @@ public class demo {
 
         return list;
     }
+
 }
