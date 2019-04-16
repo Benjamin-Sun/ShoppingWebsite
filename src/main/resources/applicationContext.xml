@@ -12,54 +12,5 @@
     <context:component-scan base-package="service"></context:component-scan>
     <context:annotation-config/>
 
-    <alias name="springDemo" alias="demo"/>
-    <bean id="springDemo" class="service.demo.SpringDemo" scope="prototype">
-        <constructor-arg name="no" value="1"/>
-        <constructor-arg name="name" value="sss"/>
-    </bean>
 
-    <bean id="dataType" class="service.demo.DataType">
-        <!--数组注入-->
-        <property name="array">
-            <list>
-                <value>天津</value>
-                <value>北京</value>
-                <value>太原</value>
-                <value>石家庄</value>
-            </list>
-        </property>
-
-        <!--list注入-->
-        <property name="lists">
-            <list>
-                <value>html</value>
-                <value>css</value>
-                <value>java</value>
-                <value>mysql</value>
-            </list>
-        </property>
-
-        <!--map注入-->
-        <property name="map">
-            <map>
-                <entry key="name" value="张三"/>
-                <entry key="sex" value="男"/>
-                <entry key="address" value="上海"/>
-            </map>
-        </property>
-
-        <!--properties-->
-        <property name="properties">
-            <props>
-                <prop key="driver">com.mysql.jdbc.Driver</prop>
-                <prop key="url">jdbc:mysql://127.0.0.1:3306/dspt</prop>
-                <prop key="username">root</prop>
-                <prop key="password">123456</prop>
-            </props>
-        </property>
-        <!--null注入-->
-        <property name="email">
-            <null/>
-        </property>
-    </bean>
 </beans>
