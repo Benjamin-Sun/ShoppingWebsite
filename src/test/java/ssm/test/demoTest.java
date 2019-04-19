@@ -1,6 +1,11 @@
 package ssm.test;
 
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 import ssm.entity.User;
 import ssm.repository.Conn;
@@ -8,11 +13,15 @@ import ssm.repository.IUserRepository;
 import ssm.repository.IUserRepositoryXML;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
+import ssm.service.UserService;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+//@RunWith(SpringRunner.class)
+//@ContextConfiguration("classpath:dean.xml")
+@ComponentScan(basePackages = "ssm.service")
 public class demoTest {
     @Test
     public void getAll() throws IOException {
@@ -132,15 +141,15 @@ public class demoTest {
     }
 
     @Autowired
-    IUserRepository iUserRepository;
+    UserService userService;
+    @Autowired
+    SqlSessionFactory sqlSessionFactory;
 
     @Test
     public void noxmlselect(){
-        try {
-            iUserRepository.selectAll();
-            System.out.println(iUserRepository.selectAll());
-        } catch (Exception e){
-            System.out.println("null");
-        }
+        SqlSession session = sqlSessionFactory.openSession();
+        IUserRepository u = session.getMapper(IUserRepository.class);
+        System.out.println(u.selectAll());
+//        userService.selectall();
     }
 }

@@ -6,7 +6,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan("ssm")
+@ComponentScan(basePackages = "ssm")
 @EnableTransactionManagement
 @Import(RepositoryConfig.class)
 public class ApplicationContext {
